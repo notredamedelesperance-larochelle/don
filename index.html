@@ -21,6 +21,18 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            background: #800020;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         .content {
             padding: 20px;
             text-align: center;
@@ -87,15 +99,22 @@
         Notre Dame de l'Espérance - La Rochelle - FSSPX
     </header>
 
+    <div class="language-selector" onclick="toggleLanguage()">EN / FR</div>
+
     <div class="content">
-        <p>
+        <p id="text-description-fr">
             L'Eglise Notre Dame de l'Espérance (La Rochelle) de la fraternité sacerdotale Saint Pie X a besoin de votre aide !
             Vous pouvez contribuer à sa rénovation et soutenir notre mission en cliquant sur le bouton ci-dessous.
+        </p>
+        <p id="text-description-en" style="display:none;">
+            The Church of Our Lady of Hope (La Rochelle) of the Society of Saint Pius X needs your help!
+            You can contribute to its renovation and support our mission by clicking the button below.
         </p>
 
         <div class="donation">
             <a href="https://fsspx.assoconnect.com/collect/description/170936-l-aider-le-prieure-n-d-du-rosaire-aux-fournils-chantonnay" target="_blank">
-                <button>Faire un don</button>
+                <button id="btn-donate-fr">Faire un don</button>
+                <button id="btn-donate-en" style="display:none;">Donate</button>
             </a>
         </div>
 
@@ -107,8 +126,24 @@
 
     <footer>
         &copy; 2024 Notre Dame de l'Espérance - La Rochelle |
-        <a href="https://laportelatine.org/lieux/les-fournils/la-rochelle">Chapelle Notre Dame de l'Espérance</a>
+        <a href="https://laportelatine.org/lieux/les-fournils/la-rochelle" id="footer-link-fr">Chapelle Notre Dame de l'Espérance</a>
+        <a href="https://laportelatine.org/lieux/les-fournils/la-rochelle" id="footer-link-en" style="display:none;">Chapel Our Lady of Hope</a>
     </footer>
+
+    <script>
+        function toggleLanguage() {
+            var elementsFr = document.querySelectorAll('[id$="-fr"]');
+            var elementsEn = document.querySelectorAll('[id$="-en"]');
+            
+            elementsFr.forEach(function(element) {
+                element.style.display = element.style.display === 'none' ? '' : 'none';
+            });
+            
+            elementsEn.forEach(function(element) {
+                element.style.display = element.style.display === 'none' ? '' : 'none';
+            });
+        }
+    </script>
 
 </body>
 </html>
