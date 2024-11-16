@@ -8,8 +8,21 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+            background: url('rochellebd.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blend-mode: lighten;
             color: #333;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8); /* Couche blanche estompée */
+            z-index: -1;
         }
 
         header {
@@ -78,7 +91,7 @@
             background: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 10px;
             margin-top: 20px;
             font-size: 0.9rem;
         }
@@ -90,6 +103,17 @@
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        .contact {
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .contact img {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -128,6 +152,14 @@
         &copy; 2024 Notre Dame de l'Espérance - La Rochelle |
         <a href="https://laportelatine.org/lieux/les-fournils/la-rochelle" id="footer-link-fr">Chapelle Notre Dame de l'Espérance</a>
         <a href="https://laportelatine.org/lieux/les-fournils/la-rochelle" id="footer-link-en" style="display:none;">Notre Dame de l'Espérance Church</a>
+        <div class="contact">
+            <p>
+                <img src="envelope-icon.png" alt="Enveloppe"> 85p.lesfournils@fsspx.fr
+            </p>
+            <p>
+                <img src="phone-icon.png" alt="Téléphone"> +33 2 51 42 95 88
+            </p>
+        </div>
     </footer>
 
     <script>
